@@ -71,8 +71,9 @@ public final class SwiftQueueManager {
                 listener: params.listener,
                 dispatchQueue: params.dispatchQueue
         )
-
+        params.listener?.onBeforeEnqueue(job: info)
         queue.addOperation(operation)
+        params.listener?.onAfterEnqueue(job: info)
     }
 
     /// All operations in all queues will be removed

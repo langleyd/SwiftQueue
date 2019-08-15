@@ -161,6 +161,9 @@ public protocol JobListener {
     /// Job was enqueued
     func onAfterEnqueue(job: JobInfo)
     
+    /// Job will evaluate if the job can be run
+    func onBeforeEvaluateJob(job: JobInfo)
+    
     /// Job will start executing
     func onBeforeRun(job: JobInfo)
 

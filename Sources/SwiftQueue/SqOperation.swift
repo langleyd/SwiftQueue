@@ -114,6 +114,7 @@ internal final class SqOperation: Operation {
         if isFinished {
             return
         }
+        listener?.onBeforeEvaluateJob(job: info)
         do {
             try self.willRunJob()
         } catch let error {
